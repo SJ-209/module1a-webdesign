@@ -1,0 +1,248 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  body { 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Background */
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1608306587579-d385dd828eee?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzEzNTEyOTZ8&ixlib=rb-4.0.3&q=85') center/cover no-repeat;
+    filter: blur(10px);
+    z-index: -1;
+  }
+  
+  /* Navigation Bar */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Better for responsiveness */
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    z-index: 10;
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav-list li {
+    margin: 0 15px;
+  }
+  
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Cart Icon */
+  .cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart svg {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  .cart .carttotal,
+  .cart .cartprice {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  /* Title */
+  .title {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  h1 {
+    display: inline-block;
+    padding: 10px;
+    border: solid black 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #BCAAA4;
+    font-size: 2rem;
+  }
+  
+  /* Main Section */
+  .main {
+    padding: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .item {
+    margin-bottom: 20px;
+  }
+  
+  .optics, .lights, .grips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .optics .item, .lights .item, .grips .item {
+    border: solid black 2px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #BCAAA4;
+    width: calc(33.33% - 30px); /* Flexible width */
+    max-width: 300px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border: solid black 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .item h3, .item h4 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .addCart, .remove {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .addCart {
+    background-color: #757575;
+    color: #E0E0E0;
+  }
+  
+  .addCart:hover {
+    background-color: #616161;
+  }
+  
+  .remove {
+    background-color: #DD2C00;
+    color: #E0E0E0;
+    margin-top: 10px;
+  }
+  
+  .remove:hover {
+    background-color: #BF360C;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+  }
+  
+  .footer-links {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer p {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Mobile Screens */
+  @media (max-width: 600px) {
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      margin: 10px 0;
+    }
+  
+    .nav-list li {
+      margin: 5px 0;
+    }
+  
+    .optics .item, .lights .item, .grips .item {
+      width: calc(100% - 20px);
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .addCart, .remove {
+      font-size: 12px;
+    }
+  }
+  
+  /* Tablet Screens */
+  @media (min-width: 601px) and (max-width: 768px) {
+    .optics .item, .lights .item, .grips .item {
+      width: calc(50% - 20px);
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
